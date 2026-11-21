@@ -1,0 +1,117 @@
+{
+  "name": "dsh-sixlayer-memory",
+  "version": "2.0.3",
+  "private": false,
+  "description": "DSH 工作台：六层记忆底座（每轮自动召回 + 候选沉淀 + 闸门审计）+ 零件化，支持 QQ 随身使用。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./service-plugin": "./lib/memory/service-plugin.js",
+    "./store": "./lib/memory/store.js",
+    "./package.json": "./package.json",
+    "./parts": "./lib/parts/index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "engines": {
+    "node": ">=22.5",
+    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+  },
+  "files": [
+    "lib/",
+    "tools/",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "catalog/",
+    "locale/*.json",
+    "icon.svg",
+    "docs/DETAIL.md",
+    "docs/DETAIL.zh.md",
+    "docs/preview.svg",
+    "docs/生命周期-自动召回与候选.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "manifestVersion": 1,
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ],
+      "immediately": false
+    }
+  },
+  "dshx": {
+    "contributes": {
+      "tools": [
+        "mem_admin_catalog",
+        "mem_admin_open",
+        "mem_admin_call",
+        "mem_write",
+        "mem_search",
+        "mem_associate",
+        "mem_read",
+        "mem_judge",
+        "mem_review",
+        "mem_pending",
+        "mem_resume",
+        "mem_handoff",
+        "mem_check",
+        "mem_dispatch",
+        "mem_receipt",
+        "mem_task",
+        "mem_scope",
+        "mem_import",
+        "mem_shadow",
+        "mem_prompt_inspector",
+        "mem_audit",
+        "mem_archive",
+        "mem_fetch_media",
+        "mem_graph_view",
+        "mem_graph_traverse",
+        "mem_parts",
+        "mem_compose",
+        "mem_affect_report",
+        "mem_affect_ingest",
+        "mem_crypto",
+        "mem_ledger",
+        "mem_health"
+      ]
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "preflight": "node tools/preflight.mjs",
+    "verify": "node tools/verify-all.mjs",
+    "check": "node tools/preflight.mjs && node tools/verify-all.mjs",
+    "prepublishOnly": "node tools/preflight.mjs && node tools/verify-all.mjs"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "memory",
+    "memory-layer",
+    "recall",
+    "audit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z9134/dsh-sixlayer-memory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/z9134/dsh-sixlayer-memory/issues"
+  },
+  "homepage": "https://github.com/z9134/dsh-sixlayer-memory#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

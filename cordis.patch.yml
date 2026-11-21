@@ -1,0 +1,8 @@
+# dsh-sixlayer-memory bundle patch
+#
+# 一个安装入口，内部两条线：记忆（memory）+ 零件（parts）。
+# 装上以后 profile 里多一行 workbench；工具默认只常驻 mem_admin_catalog，
+# 其余按需经 mem_admin_open 注入。
+- insert:
+    - id: workbench
+      name: dsh-sixlayer-memory

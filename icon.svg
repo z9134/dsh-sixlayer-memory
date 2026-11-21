@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Layered memory">
+  <rect width="64" height="64" rx="14" fill="#0f1c2e"/>
+  <rect x="12" y="14" width="40" height="8" rx="3" fill="#1d3a5c"/>
+  <rect x="12" y="25" width="40" height="8" rx="3" fill="#2b5483"/>
+  <rect x="12" y="36" width="40" height="8" rx="3" fill="#3f7fc4"/>
+  <rect x="12" y="47" width="24" height="8" rx="3" fill="#5aa0e8"/>
+  <circle cx="48" cy="51" r="4" fill="#e8a33d"/>
+</svg>

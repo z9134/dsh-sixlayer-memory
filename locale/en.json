@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Six-layer Memory",
+    "description": "Local, auditable long-term memory: query-aware recall every turn, untrusted writes held for review, credential-level content never surfaced, and every action on a hash-chained audit trail. Zero external dependencies by default.",
+    "detail": "docs/DETAIL.md"
+  }
+}

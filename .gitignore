@@ -1,0 +1,13 @@
+# 运行期产物，不进仓库
+docs/_rpc-diag.log
+*.bak*
+*.bak-*
+*.tmp-*
+node_modules/
+dist/
+*.tgz
+.DS_Store
+--dry/
+*.db
+*.db-wal
+*.db-shm
