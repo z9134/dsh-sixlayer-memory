@@ -11,7 +11,7 @@
 dsh plugin --profile desktop add dsh-sixlayer-memory
 ```
 
-**当前版本**：2.0.3 · **32 个工具** · schema v9 · 零外部依赖 · 回归 31 个套件全绿
+**当前版本**：2.0.4 · **32 个工具** · schema v9 · 零外部依赖 · 回归 31 个套件全绿
 
 📦 [npm](https://www.npmjs.com/package/dsh-sixlayer-memory) · 🎬 [40 秒介绍视频](media/intro-40s.mp4) · 📝 [变更记录](CHANGELOG.md)
 

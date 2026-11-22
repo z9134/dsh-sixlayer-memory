@@ -1,6 +1,6 @@
 {
   "name": "dsh-sixlayer-memory",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "private": false,
   "description": "DSH 工作台：六层记忆底座（每轮自动召回 + 候选沉淀 + 闸门审计）+ 零件化，支持 QQ 随身使用。",
   "type": "module",
@@ -31,7 +31,8 @@
     "docs/DETAIL.md",
     "docs/DETAIL.zh.md",
     "docs/preview.svg",
-    "docs/生命周期-自动召回与候选.md"
+    "docs/生命周期-自动召回与候选.md",
+    "LICENSE"
   ],
   "dsh": {
     "bundle": {

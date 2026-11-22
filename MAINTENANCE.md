@@ -9,7 +9,7 @@
 cd D:\001\CH002\dsh-memory-core
 node tools/preflight.mjs          # 10 项
 node tools/verify-all.mjs         # 31 个套件
-Get-Content docs\_rpc-diag.log -Tail 20
+Get-Content $env:USERPROFILE\.dsh\memory-core\diag.log -Tail 20
 ```
 
 - 插件是否还在 profile 里：`node tools/register-bundle.mjs`（已在则输出 changed:false）

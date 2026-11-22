@@ -1,5 +1,29 @@
 # 变更记录 · dsh-sixlayer-memory（六层记忆底座）
 
+## 2.0.4 — 2026-11-22
+
+主题：**按社区索引 PR #121 的 review 修三处**（维护者 zhu1090093659）。
+
+### 修复
+
+- **patch 行 id 撞名**：`cordis.patch.yml` 里原来是 `id: workbench`，而社区索引里
+  `dsh-workbench`（另一位作者）也占着同一个 id。两个插件同时安装会出现两行同 id，
+  宿主的 `applyPatches` 按 id 建 `entryMap`，后者覆盖前者 —— 插件管理按 id 读写的启用状态也会错位。
+  改为 **`id: sixlayer-memory`**（带自己的命名空间）。
+- **补 LICENSE 文件**：README 第 4 行的 license 徽章原本指向一个不存在的文件（死链），
+  现在补上 MIT 正文，并加进 `files`，会随包发布。
+- **诊断日志不再写插件安装目录**：`lib/index.js` 的 `DIAG_FILE` 原来是
+  `<包目录>/docs/_rpc-diag.log`，在只读挂载或升级替换时会写失败（静默 try/catch）。
+  改为 `$DSH_HOME/memory-core/diag.log`（默认 `~/.dsh/memory-core/diag.log`），
+  连 `$DSH_HOME` 都写不进去才退到系统临时目录；相关文档里的排查命令同步更新。
+
+### 说明
+
+- 维护者提到「npm latest 是 2.0.2」，实测是 **2.0.3**（`dist-tags.latest=2.0.3`，
+  tarball 200，`npm install` 落到 2.0.3）。大概率是镜像/本地缓存滞后，非版本被撤。
+
+---
+
 ## 2.0.3 — 2026-11-21
 
 主题：**发布到 npm**。

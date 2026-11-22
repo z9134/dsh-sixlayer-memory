@@ -1,8 +1,12 @@
 # dsh-sixlayer-memory bundle patch
 #
 # 一个安装入口，内部两条线：记忆（memory）+ 零件（parts）。
-# 装上以后 profile 里多一行 workbench；工具默认只常驻 mem_admin_catalog，
+# 装上以后 profile 里多一行 sixlayer-memory；工具默认只常驻 mem_admin_catalog，
 # 其余按需经 mem_admin_open 注入。
+#
+# 注意 id：必须带自己的命名空间。早期用过 `workbench`，而社区索引里另一个插件
+# （dsh-workbench）占着同一个 id —— 两个同时装会出现两行同 id，
+# 宿主的 applyPatches 按 id 建 entryMap，后者会覆盖前者（PR #121 review 指出）。
 - insert:
-    - id: workbench
+    - id: sixlayer-memory
       name: dsh-sixlayer-memory

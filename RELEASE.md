@@ -45,7 +45,7 @@ npm whoami --registry https://registry.npmjs.org
 ```powershell
 cd D:\001\CH002\dsh-memory-core
 
-# 干跑一遍，确认 87 个文件、无 .bak、无 _rpc-diag.log
+# 干跑一遍，确认文件数、无 .bak
 npm pack --dry-run
 
 # prepublishOnly 会自动跑 preflight + 30 个回归套件；不绿就发不出去

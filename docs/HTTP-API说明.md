@@ -41,7 +41,7 @@ token 来源：
 - `token` 留空 → 自动生成到 `meta/api-token.txt`
 - `port: 47810` → 插件自己监听一个**固定端口**（127.0.0.1），不再受 DSH 随机端口影响；不配则只走 webServer 路由
 
-重启后看 `docs/_rpc-diag.log` 是否有 `api: 已启用（写入=关）` 和 `api: 固定端口监听 127.0.0.1:47810`。
+重启后看 `~/.dsh/memory-core/diag.log` 是否有 `api: 已启用（写入=关）` 和 `api: 固定端口监听 127.0.0.1:47810`。
 
 ## 调用示例
 

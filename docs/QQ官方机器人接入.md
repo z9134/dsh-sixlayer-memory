@@ -45,7 +45,7 @@
 
 ## 验证
 
-1. 重启后看 `docs/_rpc-diag.log`：
+1. 重启后看 `~/.dsh/memory-core/diag.log`：
    - 成功：`qq-official: 已启动 appId=1906207408`、`qq-official: 已连接网关`
    - 失败：会打印具体错误（token 失败 / 网关失败）
 2. 在 QQ 里把机器人拉进群（或私聊），发 `/帮助`

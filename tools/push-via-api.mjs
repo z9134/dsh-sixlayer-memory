@@ -157,10 +157,20 @@ async function main() {
 
   const tree = await call('POST', `/repos/${OWNER}/${REPO}/git/trees`, { tree: entries })
   const message = execFileSync('git', ['-C', ROOT, 'log', '-1', '--pretty=%s'], { encoding: 'utf8' }).trim()
+
+  // 有上一次的提交就挂成父提交，让远端历史是线性的（不是每次一个孤儿快照）
+  let parents = []
+  try {
+    const head = await call('GET', `/repos/${OWNER}/${REPO}/git/ref/heads/main`)
+    if (head?.object?.sha) parents = [head.object.sha]
+  } catch {
+    /* 首次推送没有父提交 */
+  }
+
   const commit = await call('POST', `/repos/${OWNER}/${REPO}/git/commits`, {
     message: `${message}\n\n(经 GitHub API 推送)`,
     tree: tree.sha,
-    parents: [],
+    parents,
   })
 
   let hasMain = true
